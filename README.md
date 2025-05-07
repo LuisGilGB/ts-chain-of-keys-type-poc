@@ -44,7 +44,7 @@ The translation function `t` is then typed so that only valid key paths are allo
 
 ```ts
 // Example type for all valid key paths
-type CopyKey = 'header.nav.users.tooltip' | 'header.nav.settings.tooltip' | 'footer.copyright';
+import { CopyKey } from './path/to/CopyKey';
 
 // Translation function signature
 t: (key: CopyKey) => string;
