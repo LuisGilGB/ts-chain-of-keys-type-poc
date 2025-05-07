@@ -1,54 +1,24 @@
-# React + TypeScript + Vite
+# TypeScript Chain of Keys Type – Proof of Concept
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a proof of concept demonstrating how to use TypeScript to strictly type objects that contain all the texts used throughout an application. The goal is to ensure type safety, maintainability, and scalability when managing app-wide textual content, such as UI labels, messages, and other strings, by leveraging TypeScript's advanced type system.
 
-Currently, two official plugins are available:
+## Purpose
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Centralize all app texts** in a single, type-safe object structure.
+- **Enable type-safe access** to any text key throughout the codebase, reducing runtime errors due to typos or missing keys.
+- **Facilitate internationalization/localization** by making it easy to swap out or extend text objects.
+- **Showcase advanced TypeScript techniques** for typing deeply nested objects and generating key chains.
 
-## Expanding the ESLint configuration
+## What You'll Find Here
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Example implementation of a typed text object for the whole app.
+- Utility types to extract all possible key paths as string literals.
+- Usage examples in React components.
+- Guidance on how to extend or adapt the pattern for your own projects.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Resources
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- [TypeScript](https://www.typescriptlang.org/) – Strongly typed JavaScript.
+- [React](https://react.dev/) – UI library for building interactive interfaces.
+- [Vite](https://vitejs.dev/) – Fast frontend tooling and dev server.
+- [ESLint](https://eslint.org/) – Pluggable JavaScript linter.
